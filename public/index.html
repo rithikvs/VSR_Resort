@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VSR Resort Booking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+  body {
+    font-family: Arial, sans-serif;
+    background: url('https://p4.wallpaperbetter.com/wallpaper/44/92/27/blue-travel-sunbed-best-hotels-of-2017-wallpaper-preview.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding-top: 170px;
+  }
+
+  .navbar {
+    background: rgba(13, 12, 12, 0.8);
+    padding: 40px;
+ 
+  }
+
+.navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  text-align: right;
+  padding-left: 300px;
+}
+
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 20px 30px;
+  transition: 0.3s;
+}
+
+
+  .nav-link:hover {
+    color: #90caf9;
+  }
+
+  .container-form {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #90caf9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+
+h2 {
+  text-align: center;
+  color: #1072eb;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+
+  label.form-label {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  input.form-control,
+  textarea.form-control,
+  select.form-select {
+   font-size: 25px;
+    padding: 12px 14px;
+    height: auto;
+  }
+
+  input[type="date"].form-control {
+    font-size: 28px;
+    height: 60px;
+    padding: 12px 18px;
+  }
+
+  .btn-primary {
+    background-color: #1e88e5;
+    border: none;
+    width: 100%;
+    padding: 12px;
+   font-size: 25px;
+  }
+
+  .btn-primary:hover {
+    background-color: #1565c0;
+  }
+
+  .btn-secondary {
+    background-color: gray;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 25px;
+  }
+
+  .form-check-label {
+    font-size: 20px;
+  }
+
+  footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 60px;
+    font-size: 30px;
+  }
+
+  footer .footer-links a {
+    color: #90caf9;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  footer .footer-links a:hover {
+    text-decoration: underline;
+  }
+  .navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
+  color: white;
+  text-decoration: none;
+}
+
+</style>
+
+
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid px-5">
+    <!-- Left: Brand -->
+    <span class="navbar-brand">VSR RESORT</span>
+
+
+    <!-- Toggle Button (for mobile) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Right: Navigation Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Booking Form -->
+  <div class="container-form mt-4">
+    <h2> Booking Form</h2>
+<form id="bookingForm">
+  <div class="mb-4">
+    <label class="form-label">Full Name</label>
+    <input type="text" class="form-control" id="fullName" name="fullName" pattern="^[A-Za-z\s]+$" title="Name should not contain numbers or special characters" required>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+  <div class="mb-4">
+    <label class="form-label fw-bold">Phone Number</label>
+    <div class="input-group">
+      <span class="input-group-text">+91</span>
+      <input type="tel" class="form-control" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" title="Enter a valid 10-digit number" required>
+    </div>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Address</label>
+    <textarea class="form-control" name="address" rows="2" placeholder="Enter your full address..." required></textarea>
+  </div>
+  <div class="mb-5">
+    <label class="form-label">Check-in Date</label>
+    <input type="date" class="form-control" name="checkinDate" id="checkinDate" required>
+  </div>
+  <div class="mb-5">
+    <label class="form-label">Check-out Date</label>
+    <input type="date" class="form-control" name="checkoutDate" required>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Room Type</label>
+    <select class="form-select" name="roomType" required>
+      <option value="" selected disabled>Select</option>
+      <option value="Single Room">Single Room</option>
+      <option value="Double Room">Double Room</option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Number of Guests</label>
+    <input type="number" class="form-control" name="guests" min="1" required>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Food Preference</label>
+    <select class="form-select" name="foodPreference" required>
+      <option value="" selected disabled>Select</option>
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="Non-Vegetarian">Non-Vegetarian</option>
+      <option value="Vegan">Vegan</option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Guide Required?</label>
+    <select class="form-select" name="guideRequired" required>
+      <option value="" selected disabled>Select</option>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Pickup & Drop Service</label>
+    <select class="form-select" name="pickupDrop" required>
+      <option value="" selected disabled>Select</option>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+  <div class="mb-4">
+    <label class="form-label">Payment Method</label>
+    <select class="form-select" name="paymentMethod" required>
+      <option value="" selected disabled>Select</option>
+      <option value="Credit/Debit Card">Credit/Debit Card</option>
+      <option value="Cash on Arrival">Cash on Arrival</option>
+    </select>
+  </div>
+  <div class="mb-4 form-check">
+    <input type="checkbox" id="terms" class="form-check-input" name="agreedTerms" required>
+    <label for="terms" class="form-check-label">I agree to the hotel's terms & conditions</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Book Now</button>
+  <button type="reset" class="btn btn-secondary mt-2">Reset</button>
+</form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links mb-2">
+      <a href="#">Home</a> |
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </div>
+    <p>Email: contact@vsrresort.com | Phone: +91 7708552461</p>
+    <p>©VSR Resort. All rights reserved.</p>
+  </footer>
+
+<script>
+  // Set minimum check-in date to today
+  document.addEventListener("DOMContentLoaded", function() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const minDate = `${yyyy}-${mm}-${dd}`;
+    document.getElementById('checkinDate').setAttribute('min', minDate);
+  });
+
+  document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const form = this;
+    const fullName = document.getElementById("fullName").value;
+    const namePattern = /^[A-Za-z\s]+$/;
+    if (!namePattern.test(fullName)) {
+      alert("Full Name should not contain numbers or special characters.");
+      return;
+    }
+    // Prepare form data
+    const formData = new FormData(form);
+    fetch("/api/book", {
+      method: "POST",
+      body: new URLSearchParams(formData),
+      headers: { "Accept": "application/json" }
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Booking submitted successfully!");
+        form.reset();
+        // loadBookings(); // Removed to prevent displaying bookings
+      } else {
+        res.json().then(data => alert(data.error || "Failed to submit booking."));
+      }
+    })
+    .catch(() => alert("Failed to submit booking."));
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<script>
+  // ...existing code...
+
+  // Fetch and display bookings
+  function loadBookings() {
+    fetch('/api/bookings')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('bookingsList');
+        if (!data.length) {
+          list.innerHTML = "<h3>No bookings yet.</h3>";
+          return;
+        }
+        list.innerHTML = "<h3>All Bookings:</h3>" + data.map(b => `
+          <div class="card mb-3 p-3">
+            <strong>Name:</strong> ${b.fullName}<br>
+            <strong>Email:</strong> ${b.email}<br>
+            <strong>Phone:</strong> ${b.phone}<br>
+            <strong>Check-in:</strong> ${new Date(b.checkinDate).toLocaleDateString()}<br>
+            <strong>Check-out:</strong> ${new Date(b.checkoutDate).toLocaleDateString()}<br>
+            <strong>Room:</strong> ${b.roomType}<br>
+            <strong>Guests:</strong> ${b.guests}<br>
+            <strong>Food:</strong> ${b.foodPreference}<br>
+            <strong>Guide:</strong> ${b.guideRequired ? "Yes" : "No"}<br>
+            <strong>Pickup/Drop:</strong> ${b.pickupDrop ? "Yes" : "No"}<br>
+            <strong>Payment:</strong> ${b.paymentMethod}<br>
+            <strong>Agreed Terms:</strong> ${b.agreedTerms ? "Yes" : "No"}
+          </div>
+        `).join('');
+      });
+  }
+
+  // Load bookings on page load
+  window.onload = loadBookings;
+</script>
+</body>
+</html>
